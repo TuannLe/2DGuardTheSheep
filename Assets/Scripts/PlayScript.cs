@@ -80,7 +80,11 @@ public class PlayScript : MonoBehaviour
             isDead = true;
             Time.timeScale = 0;
             GameOver();
-            if(Score > data.score)
+            if(data == null)
+            {
+                AddJsonFile();
+            }
+            else if(Score > data.score)
             {
                 AddJsonFile();
             }
